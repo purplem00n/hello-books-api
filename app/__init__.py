@@ -14,7 +14,7 @@ def create_app(test_config=None):
     if not test_config:
         app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
         app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
-            "RENDER_DATABASE_URI")
+            "RENDER_DATABASE_URI") # why is working locally when I'm using the production config?
     else:
         app.config["TESTING"] = True
         app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
